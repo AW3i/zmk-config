@@ -2,7 +2,14 @@
 #include "zmk-helpers/key-labels/42.h"
  
 /* map Zen's extra keys */
+#define X_LT  &kp GRAVE      // left row, up
+#define X_LM  &kp ESC      // left row, middle
+#define X_LB  &kp LSHFT      // left row, bottom
 #define X_LH  &kp LGUI      // thumb row, left
+
+#define X_RT  &kp LGUI      // right row, up
+#define X_RM  &kp RET      // thumb row, middl
+#define X_RB  &kp RSHFT      // thumb row, bottom
 #define X_RH  &smart_mouse  // thumb row, right
 
 /* activate bluetooth */
