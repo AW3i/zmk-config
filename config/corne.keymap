@@ -12,12 +12,12 @@
 #define X_LT  &kp GRAVE      // left row, up
 #define X_LM  &kp LCTRL      // left row, middle
 #define X_LB  &kp LSHFT     // left row, bottom
-#define X_LH  &kp LGUI      // thumb row, left
+#define X_LH  &smart_num // thumb row, left
 
-#define X_RT  &kp LGUI      // right row, up
+#define X_RT  &copy_cut // right row, up
 #define X_RM  &kp SQT      // thumb row, middl
 #define X_RB  &leader_sft           // thumb row, bottom
-#define X_RH  &leader  // thumb row, right
+#define X_RH  &smart_shft // thumb row, right
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
