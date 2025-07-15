@@ -204,7 +204,11 @@ ZMK_TAP_DANCE(copy_cut,
 // Sticky shift + leader
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 // disable external power for oled screens and soft_off keyboard
-ZMK_MACRO(shutdown, wait-ms = <35000>; tap-ms = <40>; bindings = <&ext_power EP_OFF &soft_off>; )
+&soft_off {
+    split-peripheral-off-on-press;
+    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
@@ -275,7 +279,7 @@ ZMK_LAYER(sys,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB   &rgb_ug RGB_TOG  &rgb_ug RGB_BRD &rgb_ug RGB_BRI   ___       ___         X_MB     ___  &rgb_ug RGB_SPD &rgb_ug RGB_SPI  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF   X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               ___           ___             X_MH     ___           ___                                                       &shutdown
+    X_LH                                               ___           ___             X_MH     ___           ___                                                       &soft_off
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 
